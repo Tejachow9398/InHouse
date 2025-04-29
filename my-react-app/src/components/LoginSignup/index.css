@@ -1,0 +1,43 @@
+.cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f7fafa;
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.searchicon{
+    height: 30px;
+}
+.input{
+    width: 400px;
+    height: 30px;
+    border-width: 0px;
+}
+.signupbtn{
+    background-color: #e33719;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    border-width: 0px;
+    margin-right: 10px;
+    width: 100px;
+}
+.loginbtn{
+    background-color: #0792e3;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    border-width: 0px;
+    margin-right: 10px;
+    width: 100px;
+}

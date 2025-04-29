@@ -1,0 +1,34 @@
+
+.Home-Container{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.pancard-img{
+    width: 500px;
+}
+.star-img{
+    width: 200px;
+}
+.bold{
+    font-weight: bold;
+}
+.highlight {
+    font-weight: bold;
+  }
+.underline{
+    text-decoration: line-through;
+}
+.bookNow-btn{
+    background-color: #f0291a;
+    color: white;
+    border-width: 0px;
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+    border-radius: 12px;
+}
+.para{
+    font-size: 20px;
+}
