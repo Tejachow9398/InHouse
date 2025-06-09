@@ -1,15 +1,35 @@
 import Cookies from 'js-cookie'
-
+import CartContext from '../../context/CartContext'
+import { useNavigate } from 'react-router-dom';
 import { BiSearch } from "react-icons/bi";
-import { BsCart3 } from "react-icons/bs";
 import { Link } from 'react-router-dom'
 
 import "./index.css"
 
 const LoginSignup = ()=>{
+  const navigate = useNavigate();
     const onClickLogout = () => {
         Cookies.remove('jwt_token')
+        navigate('/');
     }
+
+    const renderCartItemsCount = () => (
+        <CartContext.Consumer>
+          {value => {
+            const {cartList} = value
+            const cartItemsCount = cartList.length
+    
+            return (
+              <>
+                {cartItemsCount > 0 ? (
+                  <span className="cart-count-badge">{cartList.length}</span>
+                ) : null}
+              </>
+            )
+          }}
+        </CartContext.Consumer>
+      )
+      
     const jwtToken = Cookies.get('jwt_token')
     console.log(jwtToken)
     return(
@@ -20,7 +40,16 @@ const LoginSignup = ()=>{
                 <BiSearch className="searchicon"/>
                 <input type="search" placeholder="search" className="input"/>
             </div>
-            <BsCart3/>
+            <div className="nav-menu-item-mobile">
+            <Link to="/cart" className="nav-link">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png"
+                alt="nav cart"
+                className="nav-bar-img"
+              />
+              {renderCartItemsCount()}
+            </Link>
+          </div>
             {
                 jwtToken !== undefined ? (
                 <div> 
